@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thông điệp yêu thương</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe4e1;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      z-index: 2;
+    }
+    /* Hiệu ứng trái tim bay */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6"><path fill="%23ff69b4" d="M23.6,0c-2.9,0-5.4,1.3-7.6,3.6C13.8,1.3,11.3,0,8.4,0C3.7,0,0,3.8,0,8.4c0,4.7,3.9,8.5,9.7,13.5 c3.2,2.7,6.6,5.5,7.9,7c1.4-1.5,5.1-4.3,8.3-7C28.1,16.9,32,13.1,32,8.4C32,3.8,28.3,0,23.6,0z"/></svg>') no-repeat center/contain;
+      animation: float 5s infinite ease-in;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Đừng buồn nữa nha<br>phải vui vẻ và cười thật nhiều<br>như tui nhoá bạn iu ơi 😘</h1>
+  <script>
+    // Tạo nhiều trái tim rải khắp
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
